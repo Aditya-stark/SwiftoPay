@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftoPay</title>
+
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- TailWind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white overflow-x-hidden">
+    <!-- NAV BAR -->
+    <nav
+      class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="assets/image/swiftopayLogo.png"
+            class="h-10"
+            alt="SwiftoPay Logo"
+          />
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button
+            type="button"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+          >
+            Sign In
+          </button>
+          <button
+            data-collapse-toggle="navbar-sticky"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 md:hidden"
+            aria-controls="navbar-sticky"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-sticky"
+        >
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Page Auto Slider (Wasted my whole day))-->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide swiper-slide-1">
+          <div class="slide-content">
+            <h1>One Platform, Endless Possibilities</h1>
+            <p>
+              Connect with global payment gateways and methods effortlessly.
+            </p>
+            <button class="demo-btn">Request Demo</button>
+          </div>
+          <img
+            src="assets/image/Slide1 Img.svg"
+            alt="Global Payment Integration"
+            class="slide-image-1"
+          />
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide swiper-slide-2">
+          <div class="slide-content">
+            <h1>Boost Conversions with Smarter Payments</h1>
+            <p>Optimize transactions with advanced routing and analytics.</p>
+          </div>
+          <img
+            src="assets/image/slazzer-edit-image.png"
+            alt="Rocket Growth"
+            class="slide-image-2"
+          />
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide swiper-slide-3">
+          <div class="slide-content">
+            <h1>Security You Can Trust, Performance You’ll Love</h1>
+            <p>
+              Experience the power of robust fraud prevention and scalable
+              solutions.
+            </p>
+          </div>
+          <!-- <img src="slide3-image.png" alt="Secure Transactions" class="slide-image" /> -->
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- Feature banner -->
+    <div
+      class="grid grid-cols-1 mx-16 my-5 md:m-10 md:mx-20 rounded-lg h-fit md:grid-cols-3 md:gap-6 bg-blue-100 p-3 md:p-6 md:px-6 md:py-2"
+    >
+      <!-- Send Section -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-2 p-2 md:px-4"
+      >
+        <div class="bg-white rounded-full p-3 md:p-5 shadow-md">
+          <i
+            class="fa-regular fa-paper-plane text-base md:fa-lg"
+            style="color: #5f82ed"
+          ></i>
+        </div>
+        <div class="flex flex-col items-center md:items-start p-2 md:p-4">
+          <h3 class="text-base md:text-lg font-semibold text-blue-800">Send</h3>
+          <p
+            class="text-xs md:text-sm text-gray-600 text-center md:text-start md:w-[80%]"
+          >
+            Fast global money transfers with instant processing and transparent
+            fees.
+          </p>
+        </div>
+      </div>
+
+      <!-- Spend Section -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-2 p-2 md:px-4"
+      >
+        <div class="bg-white rounded-full p-3 md:p-5 shadow-md">
+          <i
+            class="fa-solid fa-wallet text-base md:fa-xl"
+            style="color: #5f82ed"
+          ></i>
+        </div>
+        <div class="flex flex-col items-center md:items-start p-2 md:p-4">
+          <h3 class="text-base md:text-lg font-semibold text-blue-800">
+            Spend
+          </h3>
+          <p
+            class="text-xs md:text-sm text-gray-600 text-center md:text-start md:w-[80%]"
+          >
+            Issue virtual or physical cards for seamless online and offline
+            transactions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bank Section -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-2 p-2 md:px-4"
+      >
+        <div class="bg-white rounded-full p-3 md:p-5 shadow-md">
+          <i
+            class="fa-solid fa-building-columns text-base md:fa-xl"
+            style="color: #5f82ed"
+          ></i>
+        </div>
+        <div class="flex flex-col items-center md:items-start p-2 md:p-4">
+          <h3 class="text-base md:text-lg font-semibold text-blue-800">Bank</h3>
+          <p
+            class="text-xs md:text-sm text-gray-600 text-center md:text-start md:w-[80%]"
+          >
+            Access global banking without high fees, delays, or paperwork.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <div
+      class="flex justify-center bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16 px-8 h-auto md:h-[calc(100vh-64px)] w-full"
+    >
+      <div
+        class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 h-full w-full md:mx-5 md:px-10"
+      >
+        <!-- Left Section: Images -->
+        <div class="w-full md:w-1/2 flex gap-2 md:gap-4 md:h-full">
+          <div class="w-1/2 md:w-[60%]">
+            <img
+              src="assets/image/About Us Model.jpg"
+              alt="Girl Doing Payment"
+              class="rounded-lg shadow-lg md:w-full h-full md:h-full object-cover"
+            />
+          </div>
+          <div class="w-1/2 md:w-[40%] flex flex-col md:gap-4 gap-2">
+            <img
+              src="assets/image/About Us Model 2.jpg"
+              alt="Payment"
+              class="rounded-lg shadow-lg w-full h-full object-cover"
+            />
+            <!-- Experience Badge -->
+            <div
+              class="bg-blue-900 text-white text-center p-2 md:p-4 rounded-lg shadow-lg hover:shadow-blue-900 hover:bg-blue-500 hover:shadow-md hover:translate-y-[-5px] transition-colors transition-transform duration-300"
+            >
+              <p class="text-xl md:text-2xl font-bold">25+</p>
+              <p class="text-xs md:text-sm">Payment Gateways</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Section: Content -->
+        <div class="w-full md:w-1/2 space-y-2 md:space-y-4">
+          <h2 class="text-xl md:text-2xl font-bold mb-5 md:mb-2">About Us</h2>
+          <h3 class="text-2xl md:text-4xl font-bold">
+            Streamlined Payment Solutions
+          </h3>
+          <p class="text- md:text-lg leading-relaxed text-gray-300">
+            Simplify your business transactions with Swiftopay's smart payment
+            routing and integration solutions. Experience fast, secure, and
+            reliable payment management, tailored for your success.
+          </p>
+
+          <ul class="space-y-2 md:space-y-4">
+            <li class="flex items-center gap-3">
+              <span class="bg-blue-500 text-white rounded-full px-1">
+                <i class="fa-solid fa-check" style="color: #ffffff"></i>
+              </span>
+              <span>Real-time payment insights</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="bg-blue-500 text-white rounded-full px-1">
+                <i class="fa-solid fa-check" style="color: #ffffff"></i>
+              </span>
+              <span>Smart payment routing</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="bg-blue-500 text-white rounded-full px-1">
+                <i class="fa-solid fa-check" style="color: #ffffff"></i>
+              </span>
+              <span>Global payment integration</span>
+            </li>
+          </ul>
+
+          <div class="mt-5 md:mt-20">
+            <a
+            href="#"
+            class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-3 md:px-6 py-1.5 md:py-3 rounded-lg shadow-md transition-colors"
+          >
+            Learn More
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="px-8 py-10 md:px-4 md:py-10 bg-gray-50">
+      <h2 class="text-2xl font-extrabold md:text-3xl md:font-extrabold text-center text-[#1b1660]">Services</h2>
+      <p class="text-sm md:text-base text-center text-gray-500 mt-2">
+        Discover the key pillars of our inclusion process
+      </p>
+
+      <!-- Cards Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8 max-w-6xl mx-auto">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-lg shadow-lg p-5 flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="assets/image/Eseye_Copyright_POS2.jpg"
+            alt="Cashless Payment"
+            class="rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-semibold text-gray-800">
+            Cashless payment at your fingertips
+          </h3>
+          <p class="text-sm text-gray-500 mt-2 flex-grow">
+            Our seamless digital payment platform empowers you to make transactions
+            effortlessly, anytime, anywhere. Say goodbye to the hassle of carrying
+            cash or cards.
+          </p>
+          <button
+            class="mt-4 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+          >
+            Signup for Free
+          </button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-blue-100 rounded-lg shadow-lg p-5 flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <div>
+            <h3 class="text-xl font-semibold text-blue-800">
+              Never buy or sell online without using Escrow
+            </h3>
+            <p class="text-sm text-blue-700 mt-2">
+              With our Escrow service, you can buy and sell anything safely without
+              the risk of scams. Truly secure payments. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum corrupti veniam atque autem, explicabo sequi! Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+          <img
+            src="assets/image/1687137020422.jpeg"
+            alt="Escrow Image"
+            class="rounded-lg mt-4"
+          />
+          <button
+            class="mt-4 px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600"
+          >
+            Learn More
+          </button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-gray-900 rounded-lg shadow-lg p-5 flex flex-col text-white transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <img
+            src="assets/image/FriendsWithPhones_2.jpg"
+            alt="Send Cash"
+            class="rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-semibold">
+            Send cash to family & friends
+          </h3>
+          <p class="text-sm mt-2 flex-grow">
+            Securely send cash to family and friends in just a few taps. No more
+            waiting or complicated transfers. Instant and secure! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste aperiam ratione provident quod facilis fugiat!
+          </p>
+          <div class="mt-4 flex items-center justify-between bg-gray-800 p-4 rounded-lg">
+            <div>
+              <p class="text-sm">Transfer</p>
+              <p class="text-lg font-semibold">$450.00</p>
+            </div>
+            <div>
+              <p class="text-sm">Received</p>
+              <p class="text-lg font-semibold">$450.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
