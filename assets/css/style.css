@@ -29,9 +29,15 @@ body {
 /*--------------------
   3. Slide Backgrounds
 --------------------*/
-.swiper-slide-1 { background: linear-gradient(135deg, #1559b3, #0b0934); }
-.swiper-slide-2 { background: linear-gradient(135deg, #1e40af, #262389); }
-.swiper-slide-3 { background: linear-gradient(135deg, #3b82f6, #1e293b); }
+.swiper-slide-1 {
+  background: linear-gradient(135deg, #1559b3, #0b0934);
+}
+.swiper-slide-2 {
+  background: linear-gradient(135deg, #1e40af, #262389);
+}
+.swiper-slide-3 {
+  background: linear-gradient(135deg, #3b82f6, #1e293b);
+}
 
 /*--------------------
   4. Content Styles
@@ -67,7 +73,7 @@ body {
   object-fit: contain;
 }
 
-.slide-image-2{
+.slide-image-2 {
   flex: 0 1 45%;
   max-height: 100%;
   width: 100%;
@@ -116,13 +122,25 @@ body {
 --------------------*/
 /* Desktop - 1024px */
 @media (max-width: 1024px) {
-  .swiper { height: 500px; }
-  .slide-content { max-width: 500px; }
-  .slide-image-2 {max-width: 400px;}
+  .swiper {
+    height: 500px;
+  }
+  .slide-content {
+    max-width: 500px;
+  }
+  .slide-image-2 {
+    max-width: 400px;
+  }
 
-  .swiper h1 { font-size: 2rem; }
-  .swiper p { font-size: 1rem; }
-  .slide-image-1 { max-width: 500px; }
+  .swiper h1 {
+    font-size: 2rem;
+  }
+  .swiper p {
+    font-size: 1rem;
+  }
+  .slide-image-1 {
+    max-width: 500px;
+  }
   .demo-btn {
     padding: 10px 20px;
     font-size: 1rem;
@@ -131,34 +149,56 @@ body {
 
 /* Tablet - 768px */
 @media (max-width: 768px) {
-  .swiper { height: 450px; }
+  .swiper {
+    height: 450px;
+  }
   .slide-content {
     max-width: 400px;
     padding: 15px;
   }
-  .swiper h1 { font-size: 1.5rem; }
-  .swiper p { font-size: 0.9rem; }
-  .slide-image-1 { max-width: 400px; }
-  .slide-image-2 {max-width: 380px;}
+  .swiper h1 {
+    font-size: 1.5rem;
+  }
+  .swiper p {
+    font-size: 0.9rem;
+  }
+  .slide-image-1 {
+    max-width: 400px;
+  }
+  .slide-image-2 {
+    max-width: 380px;
+  }
   .swiper .demo-btn {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
   .swiper-button-prev,
-  .swiper-button-next { display: none; }
+  .swiper-button-next {
+    display: none;
+  }
 }
 
 /* Mobile - 640px */
 @media (max-width: 640px) {
-  .swiper { height: 400px; }
+  .swiper {
+    height: 400px;
+  }
   .swiper-slide {
     padding: 0 3%;
     justify-content: space-between;
   }
-  .swiper h1 { font-size: 1rem; }
-  .swiper p { font-size: 0.8rem; }
-  .slide-image-1 { max-width: 300px; }
-  .slide-image-2 {max-width: 280px;}
+  .swiper h1 {
+    font-size: 1rem;
+  }
+  .swiper p {
+    font-size: 0.8rem;
+  }
+  .slide-image-1 {
+    max-width: 300px;
+  }
+  .slide-image-2 {
+    max-width: 280px;
+  }
   .swiper .demo-btn {
     padding: 4px 10px;
     font-size: 0.7rem;
@@ -168,12 +208,34 @@ body {
 
 /* Small Mobile - 480px */
 @media (max-width: 480px) {
-  .swiper { height: 300px; }
-  .slide-content { padding: 0; }
-  .swiper h1 { font-size: 1rem; margin-bottom: 5px;}
-  .swiper p { font-size: 0.5rem; margin-bottom: 5px;}
-  .slide-image-1 { max-width: 200px; }
-  .slide-image-2 {max-width: 180px;}
+  .swiper {
+    height: 300px;
+  }
+  .slide-content {
+    padding: 0;
+  }
+  .swiper h1 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .swiper p {
+    font-size: 0.5rem;
+    margin-bottom: 5px;
+  }
+  .slide-image-1 {
+    max-width: 200px;
+  }
+  .slide-image-2 {
+    max-width: 180px;
+  }
+}
 
-  
+/*--------------------
+  9. Animate Grow
+--------------------*/
+.animate-resize {
+  transform: scaleX(0.5);
+  opacity: 0.6;
+  transform-origin: right;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
 }
