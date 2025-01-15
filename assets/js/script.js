@@ -14,36 +14,129 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-// Initialize variables for scroll animation
-let lastScrollY = window.scrollY;
-let ticking = false;
-const maxScale = 1;
-const minScale = 0.5;
-const scrollThreshold = 300; // Adjust this value to control sensitivity
+// Resize section animation
+const handleResizeSection = () => {
+  const section = document.getElementById('resizeSection');
+  if (!section) return;
 
-// Scroll Animation logic
+  const rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    const scrollProgress = Math.min(
+      Math.max(0, (window.innerHeight - rect.top) / 300),
+      1
+    );
+    section.style.transform = `scaleX(${0.5 + (0.5 * scrollProgress)})`;
+    section.style.opacity = 0.6 + (0.4 * scrollProgress);
+  }
+};
+
+// Navigation and scroll handling
+const handleNavigation = () => {
+  const sections = ['home', 'about', 'services', 'contact'];
+  const navLinks = document.querySelectorAll('#navbar-sticky a');
+  const navbar = document.getElementById('navbar-sticky');
+  const navList = navbar.querySelector('ul');
+  const isMobile = window.innerWidth < 768;
+  let activeSection = '';
+
+  // Find active section
+  sections.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        activeSection = sectionId;
+      }
+    }
+  });
+
+  if (isMobile) {
+    // Mobile menu styles
+    navList.classList.remove('bg-transparent');
+    navList.classList.add('bg-white/90');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').substring(1);
+      link.classList.remove('text-blue-600', 'text-white');
+      link.classList.add('text-gray-900');
+      
+      if (href === activeSection) {
+        link.classList.remove('text-gray-900');
+        link.classList.add('text-blue-600');
+      }
+    });
+  } else {
+    // Desktop menu styles - only handle background transparency
+    if (activeSection === 'about' || activeSection === 'contact') {
+      navList.classList.remove('bg-white/90');
+      navList.classList.add('bg-transparent');
+    } else {
+      navList.classList.remove('bg-transparent');
+      navList.classList.add('bg-white/90');
+    }
+
+    // Only update active state for desktop
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').substring(1);
+      if (href === activeSection) {
+        link.classList.add('text-blue-600');
+      } else {
+        link.classList.remove('text-blue-600');
+      }
+    });
+  }
+};
+
+// Add resize listener to handle mobile/desktop transitions
+window.addEventListener('resize', () => {
+  handleNavigation();
+});
+
+// Blog cards animation
+const handleBlogCards = () => {
+  const cards = document.querySelectorAll('.card');
+  const windowHeight = window.innerHeight;
+
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    card.classList.toggle('visible', cardTop < windowHeight - 200);
+  });
+};
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      const navHeight = document.querySelector('nav').offsetHeight;
+      window.scrollTo({
+        top: targetElement.offsetTop - navHeight,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Scroll event handler with throttling
+let ticking = false;
 document.addEventListener('scroll', () => {
-  lastScrollY = window.scrollY;
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      const section = document.getElementById('resizeSection');
-      const rect = section.getBoundingClientRect();
-      
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        // Calculate scale based on scroll position
-        const scrollProgress = Math.min(
-          Math.max(0, (window.innerHeight - rect.top) / scrollThreshold),
-          1
-        );
-        const scale = minScale + (maxScale - minScale) * scrollProgress;
-        
-        // Apply the scale transformation
-        section.style.transform = `scaleX(${scale})`;
-        section.style.opacity = 0.6 + (0.4 * scrollProgress);
-      }
-      
+      handleResizeSection();
+      handleNavigation();
+      handleBlogCards();
       ticking = false;
     });
     ticking = true;
   }
+});
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  handleResizeSection();
+  handleNavigation();
+  handleBlogCards();
 });
